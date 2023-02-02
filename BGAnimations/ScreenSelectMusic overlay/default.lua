@@ -1,4 +1,5 @@
 local t = Def.ActorFrame {}
+t[#t+1] = LoadActor("../everyone.dance.lua")
 t[#t+1] = Def.Actor{
 	BeginCommand=function(s)
 		if GAMESTATE:IsAnExtraStage() then
@@ -82,3 +83,4 @@ t[#t+1] = Def.Actor{
 t[#t+1] = StandardDecorationFromFile( "Balloon", "Balloon" );
 
 return t
+

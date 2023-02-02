@@ -1,4 +1,5 @@
 local t = LoadFallbackB();
+t[#t+1] = LoadActor("../everyone.dance.lua")
 
 local screen = Var("LoadingScreen")
 local ES = GAMESTATE:HasEarnedExtraStage()
@@ -202,3 +203,4 @@ return Def.ActorFrame{
     };
     LoadActor("EXOverlay.lua")
 }
+
