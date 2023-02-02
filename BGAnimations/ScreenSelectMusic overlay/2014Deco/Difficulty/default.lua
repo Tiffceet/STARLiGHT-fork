@@ -159,7 +159,7 @@ local function DrawDifListItem(diff)
               if scores[1] then
                 topscore = scores[1];
                 assert(topscore);
-                local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")
+                local misses = topscore:GetTapNoteScore("TapNoteScore_Miss")+topscore:GetTapNoteScore("TapNoteScore_CheckpointMiss")+topscore:GetHoldNoteScore("HoldNoteScore_LetGo")+topscore:GetHoldNoteScore("HoldNoteScore_MissedHold")
                 local boos = topscore:GetTapNoteScore("TapNoteScore_W5")
                 local goods = topscore:GetTapNoteScore("TapNoteScore_W4")
                 local greats = topscore:GetTapNoteScore("TapNoteScore_W3")
@@ -171,7 +171,7 @@ local function DrawDifListItem(diff)
                     self:glowblink();
                     self:effectperiod(0.20);
                     self:zoom(0.5);
-                  elseif greats == 0 then
+                  elseif greats == 0 and goods == 0 then
                     self:diffuse(GameColor.Judgment["JudgmentLine_W2"]);
                     self:glowshift();
                     self:zoom(0.5);
