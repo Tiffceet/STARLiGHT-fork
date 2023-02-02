@@ -206,8 +206,8 @@ local function RefreshActiveSongData()
         player_data.fc = FullComboType(player_stats); -- Returns nil if no FC
 
         local dance_points = player_stats:GetPercentDancePoints()
-        -- player_data.score = player_stats:GetScore()
-        player_data.score = tonumber(dance_points) * 100
+        player_data.score = player_stats:GetScore()
+        -- player_data.score = tonumber(dance_points) * 100
         
         player_data.ingame = IsPlayerInGameplayScreen() or IsPlayerInEvalScreen()
 
