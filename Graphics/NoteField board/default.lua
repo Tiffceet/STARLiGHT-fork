@@ -27,7 +27,8 @@ local args= {
 	};
 	Def.Quad{
 		InitCommand=function(self) self
-			:diffuse(color("#ff1b00"))
+			-- :diffuse(color("#ff1b00"))
+			:diffuse(color("#000000"))
 			:diffusealpha(0)
 			:hibernate(math.huge)
 		end,

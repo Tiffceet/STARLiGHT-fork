@@ -82,9 +82,9 @@ for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
       Texture = "normal";
       BeginCommand=function(s)
         if LoadScreen == "ScreenDemonstration" then
-          s:setsize(680,51) 
+          s:setsize(500,10)
         else
-          s:setsize(642,45)
+          s:setsize(500,10)
         end
       end,
       OnCommand=function(self)
@@ -100,7 +100,7 @@ for pn in ivalues(GAMESTATE:GetEnabledPlayers()) do
           else
             self:Load(THEME:GetPathB("","ScreenGameplay decorations/normal (stretch).png"))
           end;
-          self:setsize(642,45)
+          self:setsize(500,10)
     		end;
     	end;
     };
