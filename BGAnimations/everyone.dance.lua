@@ -171,9 +171,9 @@ local function RefreshActiveSongData()
 
         if not song then return end
         if not step_data then return end
+
         player_data.song_info = 
         {
-            song_dir = song:GetSongDir(),
             name = song:GetTranslitFullTitle(),
             artist = song:GetTranslitArtist(),
             pack = song:GetGroupName(),
