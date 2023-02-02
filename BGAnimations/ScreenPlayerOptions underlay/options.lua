@@ -131,20 +131,25 @@ local function MakeRow(rownames, idx)
 							if song then
 								local speedmult = screen:GetOptionRow(0):GetChoiceInRowWithFocus(pn)
 								local speedstring = THEME:GetString("OptionItemNames","Speed"..speedmult)
-								local speedsub = string.gsub(speedstring, "x", "")
-								if song:IsDisplayBpmRandom() or song:IsDisplayBpmSecret() then
-									text = "?"
-								else
-									local dispBPMs = song:GetDisplayBpms()
-									local BPM1Mod = math.floor(dispBPMs[1]*speedsub)
-									if song:IsDisplayBpmConstant() then
-										text = BPM1Mod
-									else
-										local BPM2Mod = math.floor(dispBPMs[2]*speedsub)
-										text = BPM1Mod.." - "..BPM2Mod
-									end
-								end
-								self:settext("Speed".." ("..text..")");
+                                if string.sub(speedstring,1,string.len("C")) == "C" then
+                                    local speedsub = string.gsub(speedstring, "C", "")
+                                    self:settext("Speed".." ("..speedsub..")");
+                                else
+                                    local speedsub = string.gsub(speedstring, "x", "")
+                                    if song:IsDisplayBpmRandom() or song:IsDisplayBpmSecret() then
+                                        text = "?"
+                                    else
+                                        local dispBPMs = song:GetDisplayBpms()
+                                        local BPM1Mod = math.floor(dispBPMs[1]*speedsub)
+                                        if song:IsDisplayBpmConstant() then
+                                            text = BPM1Mod
+                                        else
+                                            local BPM2Mod = math.floor(dispBPMs[2]*speedsub)
+                                            text = BPM1Mod.." - "..BPM2Mod
+                                        end
+                                    end
+                                    self:settext("Speed".." ("..text..")");
+                                end
 							else
 								self:settext("Speed")
 							end
