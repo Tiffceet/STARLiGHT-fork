@@ -1,4 +1,5 @@
 local t = Def.ActorFrame{};
+t[#t+1] = LoadActor("../everyone.dance.lua")
 -- Full combo
 for pn in ivalues(GAMESTATE:GetHumanPlayers()) do
 	t[#t+1] = LoadActor("FullCombo", pn);
